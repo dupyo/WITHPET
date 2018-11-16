@@ -22,7 +22,7 @@
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i>
 			</button>
-					 <%if (uDTO != null) {%>
+					<%if (uDTO != null) {%>
 						<a style="font-family: NANUMSQUARER; font-weight: 300; font-size: 15px; color:red" ><%=uDTO.getUserName() %>님 환영합니다.</a>
 					<%} %>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
