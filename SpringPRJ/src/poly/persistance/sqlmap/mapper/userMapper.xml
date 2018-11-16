@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.UserMapper">
+	<!-- 회원가입 -->
+	<insert id="insertUser" parameterType="UserDTO">
+		INSERT INTO USER_INFO
+			(
+				USER_NAME,
+				USER_EMAIL,
+				USER_TEL,
+				PASSWORD,
+				USER_AUTH,
+				BIRTHGENDER,
+				REG_DATE
+				
+			)
+			VALUES
+			(
+				#{userName},
+				#{userEmail},
+				#{userTel},
+				#{password},
+				1,
+				#{birthGender},
+				NOW()
+			)
+			
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="userLoginProc" parameterType="UserDTO" resultType="UserDTO">
+		
+		SELECT 
+			USER_NO as userNo,
+			USER_EMAIL as userEmail,
+			USER_NAME as userName,
+			USER_TEL as userTel,
+			REG_DATE as regDate,
+			BIRTHGENDER as birthGender,
+			USER_AUTH as userAuth
+		FROM USER_INFO
+		WHERE (USER_EMAIL=#{userEmail} OR USER_NAME=#{userName}) AND PASSWORD=#{password}
+		
+	</select>
+	
+</mapper>
