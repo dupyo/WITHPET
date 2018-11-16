@@ -14,7 +14,7 @@
 			
 			<div class="row text-center">
 
-				<%if(uDTO != null) {%>
+				<%-- <%if(uDTO != null) {%> --%>
 				<div class="col-md-6" onclick="javascript:locaion.href='/board/boardList.do?userNo=<%-- <%=uDTO.getUserNO()%> --%>';">
 					<span class="fa-stack fa-4x">
 					<i class="fas fa-circle fa-stack-2x text-primary"></i>
@@ -32,7 +32,7 @@
 					<h4 class="service-heading">My Favorite Center</h4>
 					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
 				</div>
-				<%} else {%>
+				<%-- <%} else {%> --%>
 				<div class="col-md-6">
 					<span class="fa-stack fa-4x"> 
 					<i class="fas fa-circle fa-stack-2x text-primary"></i> 
@@ -42,7 +42,7 @@
 					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
 				</div>
 				
-				<%} %>
+				<%-- <%} %> --%>
 				
 				
 			</div>
