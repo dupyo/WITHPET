@@ -10,10 +10,10 @@
 <!-- 부트스트랩 로그인 css -->
 <%@include file="/WEB-INF/view/bootlogincss.jsp" %>
 </head>
-<body id="page-top">
-	<!-- 부트스트랩 nav -->
-	<%@include file="/WEB-INF/view/top.jsp" %>
-<div class="container">
+<body id="page-top" style="background-color:default">
+<!-- 부트스트랩 nav -->
+<%@include file="/WEB-INF/view/top.jsp" %>
+<div class="container" style="padding-top:10%; padding-bottom:35%">
 		
 	<div style="height:150px"></div>
 	

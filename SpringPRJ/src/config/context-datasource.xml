@@ -23,7 +23,7 @@
 	    <property name="testConnectionOnCheckout" value="false" />
 	</bean> -->
     
-    <!-- oracle Connection Pool -->
+    <!-- mysql Connection Pool -->
     <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         lazy-init="false">

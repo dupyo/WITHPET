@@ -1,7 +1,10 @@
+<%@page import="poly.dto.BoardDTO"%>
+<%@page import="java.util.List"%>
 <%@page import="poly.dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%-- <% UserDTO uDTO = (UserDTO)session.getAttribute("uDTO"); %> --%>
+<% List<BoardDTO> bList = (List<BoardDTO>)request.getAttribute("bList"); %>
 <html>
 <head>
 <title>WITHPET - 회원가입 페이지</title>
@@ -19,7 +22,18 @@
 	
 	<!-- 부트스트랩 회원가입 템플릿 -->
 	<div class="d-flex justify-content-center">
-	
+		<table border="1">
+			<%for (int i=0; i < bList.size(); i++) { %>
+			<tr>
+				<td>
+					<%=bList.get(i).getTitle() %>
+					<%=bList.get(i).getUserName() %>
+					<%=bList.get(i).getContent() %>
+					<%=bList.get(i).getRegDate() %>
+				</td>
+			</tr>
+			<%} %>
+		</table>
 	</div>
 		
 </div>

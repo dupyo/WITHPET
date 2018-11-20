@@ -11,7 +11,6 @@
 </head>
 
 <body id="page-top">
-
 <!-- 부트스트랩 nav -->
 <%@include file="top.jsp" %>
 	<!-- Header -->
@@ -24,6 +23,7 @@
 			</div>
 		</div>
 	</header>
+<div class="container">
 	
 
 	<!-- 부트스트랩 mypage -->
@@ -34,7 +34,7 @@
 	
 	<!-- 부트스트랩 board -->
 	<%@include file="bootboard.jsp" %>
-	
+</div>
 	<!-- 부트스트랩 js -->
 	<%@include file="bootjs.jsp" %>
 </body>

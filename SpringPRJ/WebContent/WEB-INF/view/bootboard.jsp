@@ -13,7 +13,7 @@
 			</div>
 			<div class="row text-center">
 				
-				<div class="col-md-6">
+				<div class="col-md-6" onclick="location.href='/board/boardList.do';">
 					<span class="fa-stack fa-4x"> 
 					<i class="fas fa-circle fa-stack-2x text-primary"></i>
 					<i class="fas fa-laptop fa-stack-1x fa-inverse"></i>

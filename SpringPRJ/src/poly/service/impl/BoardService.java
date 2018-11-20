@@ -17,8 +17,8 @@ public class BoardService implements IBoardService{
 	private BoardMapper boardMapper;
 
 	@Override
-	public List<BoardDTO> getBoardList(List<BoardDTO> bList) throws Exception {
-		return boardMapper.getBoardList(bList);
+	public List<BoardDTO> getBoardList() throws Exception {
+		return boardMapper.getBoardList();
 	}
 	
 }

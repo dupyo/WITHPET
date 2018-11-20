@@ -7,6 +7,6 @@ import poly.dto.BoardDTO;
 
 @Mapper("BoardMapper")
 public interface BoardMapper {
-	public List<BoardDTO> getBoardList(List<BoardDTO> bList) throws Exception;
+	public List<BoardDTO> getBoardList() throws Exception;
 
 }

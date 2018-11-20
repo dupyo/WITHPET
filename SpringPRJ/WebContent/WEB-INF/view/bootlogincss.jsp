@@ -10,10 +10,10 @@ html, body {
 	font-family: 'Numans', sans-serif;
 }
 
-.container {
+/* .container {
 	height: 100%;
 	align-content: center;
-}
+} */
 
 .card {
 	margin-top: auto;
