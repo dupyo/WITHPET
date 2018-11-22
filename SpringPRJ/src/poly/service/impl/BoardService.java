@@ -20,5 +20,16 @@ public class BoardService implements IBoardService{
 	public List<BoardDTO> getBoardList() throws Exception {
 		return boardMapper.getBoardList();
 	}
+
+	@Override
+	public List<BoardDTO> getNoticeList() throws Exception {
+		System.out.println("Service ----------------------");
+		return boardMapper.getNoticeList();
+	}
+
+	@Override
+	public int insertBoardProc(BoardDTO bDTO) throws Exception {
+		return boardMapper.insertBoardProc(bDTO);
+	}
 	
 }

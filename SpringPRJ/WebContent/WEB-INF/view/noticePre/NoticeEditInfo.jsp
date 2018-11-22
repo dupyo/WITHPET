@@ -30,7 +30,7 @@ function doOnload(){
 	
 	if ("<%=access%>"=="1"){
 		alert("작성자만 수정할 수 있습니다.");
-		location.href="/notice/NoticeList.do";
+		location.href="/noticePre/NoticeList.do";
 		
 	}
 }
@@ -102,7 +102,7 @@ function calBytes(str){
 </head>
 <body onload="doOnload();">
 <h2>글 수정!</h2>
-<form name="f" method="post" action="/notice/NoticeUpdate.do" onsubmit="return doSubmit(this);">
+<form name="f" method="post" action="/noticePre/NoticeUpdate.do" onsubmit="return doSubmit(this);">
 <input type="hidden" name="nSeq" value="<%=CmmUtil.nvl(request.getParameter("nSeq")) %>" />
 	<table border="1">
 		<col width="100px" />

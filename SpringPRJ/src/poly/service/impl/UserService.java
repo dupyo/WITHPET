@@ -17,16 +17,33 @@ public class UserService implements IUserService{
 	
 	@Override
 	public int insertUser(UserDTO uDTO) throws Exception {
-		System.out.println("userName : " + CmmUtil.nvl(uDTO.getUserName()));
-		System.out.println("userEmail : " + CmmUtil.nvl(uDTO.getUserEmail()));
+		System.out.println("Service userName : " + CmmUtil.nvl(uDTO.getUserName()));
+		System.out.println("Service userEmail : " + CmmUtil.nvl(uDTO.getUserEmail()));
 		return userMapper.insertUser(uDTO);
 	}
 
 	@Override
 	public UserDTO userLoginProc(UserDTO uDTO) throws Exception {
-		System.out.println("userName : " + CmmUtil.nvl(uDTO.getUserName()));
-		System.out.println("userEmail : " + CmmUtil.nvl(uDTO.getUserEmail()));
+		System.out.println("Service userName : " + CmmUtil.nvl(uDTO.getUserName()));
+		System.out.println("Service userEmail : " + CmmUtil.nvl(uDTO.getUserEmail()));
+		System.out.println("Service password : " + CmmUtil.nvl(uDTO.getPassword()));
 		return userMapper.userLoginProc(uDTO);
+	}
+
+	@Override
+	public int updateUserInfo(UserDTO uDTO) throws Exception {
+		System.out.println("Service userNo : " + CmmUtil.nvl(uDTO.getUserNo()));
+		System.out.println("Service userName : " + CmmUtil.nvl(uDTO.getUserName()));
+		System.out.println("Service userEmail : " + CmmUtil.nvl(uDTO.getUserEmail()));
+		System.out.println("Service userTel : " + CmmUtil.nvl(uDTO.getUserTel()));
+		System.out.println("Service password : " + CmmUtil.nvl(uDTO.getPassword()));
+		return userMapper.updateUserInfo(uDTO);
+	}
+
+	@Override
+	public int getEmailChk(UserDTO uDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return userMapper.getEmailChk(uDTO);
 	}
 
 }

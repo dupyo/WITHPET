@@ -26,7 +26,7 @@ if (rList==null){
 
 //상세보기 이동
 function doDetail(seq){
-	location.href="/notice/NoticeInfo.do?nSeq="+ seq;
+	location.href="/noticePre/NoticeInfo.do?nSeq="+ seq;
 }
 
 </script>	
@@ -78,6 +78,6 @@ for (int i=0;i<rList.size();i++){
 }
 %>
 </table>
-<a href="/notice/NoticeReg.do">[글쓰기]</a>
+<a href="/noticePre/NoticeReg.do">[글쓰기]</a>
 </body>
 </html>

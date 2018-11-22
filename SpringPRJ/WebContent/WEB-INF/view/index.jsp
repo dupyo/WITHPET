@@ -4,6 +4,7 @@
 	pageEncoding="UTF-8"%>
 <html lang="">
 <head>
+<title>WITHPET - 메인 페이지</title>
 <!-- 부트스트랩 css -->
 <%@include file="bootcss.jsp" %>
 <!-- 부트스트랩 로그인 css -->
@@ -23,7 +24,6 @@
 			</div>
 		</div>
 	</header>
-<div class="container">
 	
 
 	<!-- 부트스트랩 mypage -->
@@ -34,8 +34,8 @@
 	
 	<!-- 부트스트랩 board -->
 	<%@include file="bootboard.jsp" %>
-</div>
 	<!-- 부트스트랩 js -->
 	<%@include file="bootjs.jsp" %>
+	
 </body>
 </html>

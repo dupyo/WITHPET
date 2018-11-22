@@ -34,7 +34,7 @@ public class NoticeController {
 	private INoticeService noticeService;
 	
 	/*
-	 * 함수명 위의 value="notice/NoticeList" => /notice/NoticeList.do로 호출되는 url은 무조건 이 함수가 실행된다.
+	 * 함수명 위의 value="noticePre/NoticeList" => /noticePre/NoticeList.do로 호출되는 url은 무조건 이 함수가 실행된다.
 	 * method=RequestMethod.GET => 폼 전송방법을 지정하는 것으로 get방식은 GET, post방식은 POST이다.
 	 * method => 기입안하면 GET, POST 모두 가능하나, 가급적 적어주는 것이 좋다.
 	 * */
@@ -49,7 +49,7 @@ public class NoticeController {
 	/**
 	 * 게시판 리스트 보여주기
 	 * */
-	/*@RequestMapping(value="notice/NoticeList", method=RequestMethod.GET)
+	/*@RequestMapping(value="noticePre/NoticeList", method=RequestMethod.GET)
 	public String NoticeList(HttpServletRequest request, HttpServletResponse response, 
 			ModelMap model) throws Exception {
 		
@@ -73,7 +73,7 @@ public class NoticeController {
 		//로그 찍기(추후 찍은 로그를 통해 이 함수 호출이 끝났는지 파악하기 용이하다.)
 		log.info(this.getClass().getName() + ".NoticeList end!");
 		
-		//함수 처리가 끝나고 보여줄 JSP 파일명(/WEB-INF/view/notice/NoticeList.jsp) 
-		return "/notice/NoticeList";
+		//함수 처리가 끝나고 보여줄 JSP 파일명(/WEB-INF/view/noticePre/NoticeList.jsp) 
+		return "/noticePre/NoticeList";
 	}*/
 }

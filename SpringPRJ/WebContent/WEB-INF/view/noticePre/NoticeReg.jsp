@@ -19,7 +19,7 @@ function doOnload(){
 	
 	if (user_id==""){
 		alert("로그인된 사용자만 글을 쓸 수 있습니다.");
-		top.location.href="/notice/NoticeList.do";
+		top.location.href="/noticePre/NoticeList.do";
 		
 	}
 	
@@ -91,7 +91,7 @@ function calBytes(str){
 </script>	
 </head>
 <body onload="doOnload();">
-<form name="f" method="post" action="/notice/NoticeInsert.do" target= "ifrPrc" onsubmit="return doSubmit(this);">
+<form name="f" method="post" action="/noticePre/NoticeInsert.do" target= "ifrPrc" onsubmit="return doSubmit(this);">
 	<table border="1">
 		<col width="100px" />
 		<col width="500px" />

@@ -4,6 +4,7 @@
 <mapper namespace="poly.persistance.mapper.UserMapper">
 	<!-- 회원가입 -->
 	<insert id="insertUser" parameterType="UserDTO">
+		
 		INSERT INTO USER_INFO
 			(
 				USER_NAME,
@@ -36,12 +37,32 @@
 			USER_EMAIL as userEmail,
 			USER_NAME as userName,
 			USER_TEL as userTel,
+			PASSWORD as password,
 			REG_DATE as regDate,
 			BIRTHGENDER as birthGender,
 			USER_AUTH as userAuth
 		FROM USER_INFO
 		WHERE (USER_EMAIL=#{userEmail} OR USER_NAME=#{userName}) AND PASSWORD=#{password}
 		
+	</select>
+	
+	<!-- 회원정보수정 -->
+	<update id="updateUserInfo" parameterType="UserDTO">
+	
+		UPDATE USER_INFO
+		SET USER_NAME=#{userName},
+			USER_EMAIL=#{userEmail},
+			USER_TEL=#{userTel},
+			PASSWORD=#{password},
+			UPD_DATE=NOW()
+		WHERE USER_NO=#{userNo}	
+	
+	</update>
+	<!--getEmailChk 이메일 조회  체크 AJAX-->
+	<select id="getEmailChk" parameterType="UserDTO" resultType="int">
+	
+	SELECT COUNT(USER_EMAIL) FROM USER_INFO WHERE USER_EMAIL=#{userEmail}
+	
 	</select>
 	
 </mapper>

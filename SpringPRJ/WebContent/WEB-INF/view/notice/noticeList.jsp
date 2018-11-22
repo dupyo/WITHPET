@@ -4,10 +4,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%-- <% UserDTO uDTO = (UserDTO)session.getAttribute("uDTO"); %> --%>
-<% List<BoardDTO> bList = (List<BoardDTO>)request.getAttribute("bList"); %>
+<% List<BoardDTO> nList = (List<BoardDTO>)request.getAttribute("nList"); %>
 <html>
 <head>
-<title>WITHPET - 게시판 리스트 페이지</title>
+<title>WITHPET - 공지사항 리스트 페이지</title>
 <!-- 부트스트랩 css -->
 <%@include file="/WEB-INF/view/bootcss.jsp" %>
 <!-- 부트스트랩 로그인 템플릿 css -->
@@ -16,12 +16,12 @@
 <body>
 	<!-- 부트스트랩 nav -->
 	<%@include file="/WEB-INF/view/top.jsp" %>
-<div class="container" style="height: 120%;">
+<div class="container">
 
 	<div style="height:150px"></div>
 	
 	<!-- 부트스트랩 회원가입 템플릿 -->
-	<div class="d-flex justify-content-center form-group">
+	<div class="d-flex justify-content-center">
 		<table border="1">
 			<tr>
 				<th>회원이름</th>
@@ -29,19 +29,21 @@
 				<th>내용</th>
 				<th>작성일</th>
 			</tr>
-			<%for (int i=0; i < bList.size(); i++) { %>
+			<%for (int i=0; i < nList.size(); i++) { %>
 			<tr>
-				<td><%=bList.get(i).getUserName() %></td>
-				<td><%=bList.get(i).getTitle() %></td>
-				<td><%=bList.get(i).getContent() %></td>
-				<td><%=bList.get(i).getRegDate() %></td>
+				<td><%=nList.get(i).getUserName() %></td>
+				<td><%=nList.get(i).getTitle() %></td>
+				<td><%=nList.get(i).getContent() %></td>
+				<td><%=nList.get(i).getRegDate() %></td>
 			</tr>
 			<%} %>
 		</table>
 	</div>
 		<div style="height:50px;"></div>
 		<div class="form-group" style="">
-			<button class="btn float-right" onclick="location.href='/board/insertBoard.do';">write</button>
+			<form action="/notice/insertNotice.do" method="post">
+				<input type="button" value="write" class="btn float-right">
+			</form>
 		</div>
 		
 </div>
@@ -57,6 +59,5 @@
 	
 	<!-- 부트스트랩 js -->
 	<%@include file="/WEB-INF/view/bootjs.jsp" %>
-	
 </body>
 </html>

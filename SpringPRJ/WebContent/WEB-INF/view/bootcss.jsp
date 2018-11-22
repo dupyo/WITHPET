@@ -17,8 +17,13 @@
 <link href="/resources/css/agency.min.css" rel="stylesheet">
 
 <!-- bootstrap font -->
-<style type="html/css">
+<style type="text/css">
 .ttt {
   font-family: NanumBrush;
+}
+
+.hoverBoy:hover {
+	z-index:10000;
+	background-color : rgba(119, 196, 255, 0.5);
 }
 </style>

@@ -14,3 +14,4 @@
 	
 	<!-- Custom scripts for this template -->
 	<script src="/resources/js/agency.min.js"></script>
+	<script src="/resources/js/jquery.form.min.js"></script>

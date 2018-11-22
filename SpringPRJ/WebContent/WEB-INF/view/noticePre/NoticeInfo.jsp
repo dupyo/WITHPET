@@ -40,7 +40,7 @@ System.out.println("ss_user_id : "+ss_user_id);
 //수정하기
 function doEdit(){
 	if ("<%=edit%>"==2){
-		location.href="/notice/NoticeEditInfo.do?nSeq=<%=CmmUtil.nvl(rDTO.getNotice_seq())%>";
+		location.href="/noticePre/NoticeEditInfo.do?nSeq=<%=CmmUtil.nvl(rDTO.getNotice_seq())%>";
 		
 	}else if ("<%=edit%>"==3){
 		alert("로그인 하시길 바랍니다.");
@@ -56,7 +56,7 @@ function doEdit(){
 function doDelete(){
 	if ("<%=edit%>"==2){
 		if(confirm("작성한 글을 삭제하시겠습니까?")){
-			location.href="/notice/NoticeDelete.do?nSeq=<%=CmmUtil.nvl(rDTO.getNotice_seq())%>";
+			location.href="/noticePre/NoticeDelete.do?nSeq=<%=CmmUtil.nvl(rDTO.getNotice_seq())%>";
 			
 		}
 		
@@ -70,7 +70,7 @@ function doDelete(){
 }
 //목록으로 이동
 function doList(){
-	location.href="/notice/NoticeList.do";
+	location.href="/noticePre/NoticeList.do";
 		
 }
 

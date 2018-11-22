@@ -8,27 +8,27 @@
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<h2 class="section-heading text-uppercase">Board</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolorsit amet consectetur.</h3>
+					<h3 class="section-subheading text-muted">게시판과 공지사항입니다.</h3>
 				</div>
 			</div>
 			<div class="row text-center">
 				
-				<div class="col-md-6" onclick="location.href='/board/boardList.do';">
+				<div class="col-md-6 hoverBoy" style="cursor:pointer" onclick="location.href='/board/boardList.do';">
 					<span class="fa-stack fa-4x"> 
 					<i class="fas fa-circle fa-stack-2x text-primary"></i>
-					<i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+					<i class="fas fa-comments fa-stack-1x fa-inverse"></i>
 					</span>
-					<h4 class="service-heading">Responsive Design</h4>
-					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+					<h4 class="service-heading">Board</h4>
+					<p class="text-muted">Board for communication with all users of Withpet.</p>
 				</div>
 				
-				<div class="col-md-6">
-					<span class="fa-stack fa-4x"> <i
-						class="fas fa-circle fa-stack-2x text-primary"></i> <i
-						class="fas fa-lock fa-stack-1x fa-inverse"></i>
+				<div class="col-md-6 hoverBoy" style="cursor:pointer" onclick="location.href='/notice/noticeList.do';">
+					<span class="fa-stack fa-4x"> 
+					<i class="fas fa-circle fa-stack-2x text-primary"></i> 
+					<i class="fas fa-list fa-stack-1x fa-inverse"></i>
 					</span>
-					<h4 class="service-heading">Web Security</h4>
-					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+					<h4 class="service-heading">Notice</h4>
+					<p class="text-muted">Notice that Manager informs.</p>
 				</div>
 				
 			</div>
