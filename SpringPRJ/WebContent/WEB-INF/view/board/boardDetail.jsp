@@ -1,16 +1,18 @@
+<%@page import="poly.dto.BoardDTO"%>
 <%@page import="poly.dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%-- <% UserDTO uDTO = (UserDTO)session.getAttribute("uDTO"); %> --%>
+<% BoardDTO bDTO = (BoardDTO)request.getAttribute("bDTO"); %>
 <html>
 <head>
-<title>WITHPET - 회원정보 상세 페이지</title>
+<title>WITHPET - 게시물 상세 페이지</title>
 <!-- 부트스트랩 css -->
 <%@include file="/WEB-INF/view/bootcss.jsp" %>
 
 <script type="text/javascript">
-	function delUserInfo() {
-		location.href='/user/deleteUserProc.do';
+	function delBoardInfo(boardNo) {
+		location.href='/board/deleteBoardProc.do?boardNo='+boardNo;
 	}
 </script>	
 </head>
@@ -23,37 +25,36 @@
 	
 	<!-- 부트스트랩 회원가입 템플릿 -->
 	<div class="d-flex justify-content-center form-group">
-	 	<form action="/user/updateUserInfoProc.do" id="formToController" method="post" class="form-group">
+	 	<form action="/user/updateBoardProc.do" id="formToController" method="post" class="form-group">
 			<table border="1">
 				<tr>
-					<th>회원이름</th><td><input type="text" name="userName" value="<%=uDTO.getUserName() %>"/></td>
+					<%if (bDTO.getUserNo().equals(uDTO.getUserNo())) {%>
+					<th>제목</th><td><input type="text" name="title" value="<%=bDTO.getTitle() %>" /></td>
+					<%} else { %>
+					<th>제목</th><td><input type="text" name="title" value="<%=bDTO.getTitle() %>" readonly/></td>
+					<%} %>
 				</tr>
 				<tr>
-					<th>회원이메일</th><td><input type="text" name="userEmail" value="<%=uDTO.getUserEmail() %>" readonly /></td>
+					<th>작성자</th><td><input type="text" name="userName" value="<%=bDTO.getUserName() %>" readonly/></td>
 				</tr>
 				<tr>
-					<th>회원연락처</th><td><input type="text" name="userTel" value="<%=uDTO.getUserTel() %>" readonly /></td>
+					<th>조회수</th><td><input type="text" name="count" value="<%=bDTO.getCount() %>"/></td>
 				</tr>
 				<tr>
-					<th>새 비밀번호</th><td><input type="password" name="password" id="password" value="" placeholder="Password"/></td>
+					<th>작성일</th><td><input type="text" name="regDate" value="<%=bDTO.getRegDate() %>" readonly /></td>
 				</tr>
 				<tr>
-					<th>새 비밀번호 확인</th><td><input type="password" name="Confirm-password" value="" placeholder="Confirm-password"/></td>
-				</tr>
-				<tr>
-					<th>가입일</th><td><input type="text" name="regDate" value="<%=uDTO.getRegDate() %>" readonly /></td>
-				</tr>
-				<tr>
-					<th>생년월일</th><td><input type="text" name="idBirth" value="<%=uDTO.getBirthGender() %>" readonly /></td>
-				</tr>
-				<tr>
-					<th>성별</th><td><input type="text" name="idGender" value="<%=uDTO.getBirthGender() %>" /></td>
+					<%if (bDTO.getUserNo().equals(uDTO.getUserNo())) {%>
+					<th>내용</th><td><textarea name="content" id=""><%=bDTO.getContent() %></textarea></td>
+					<%} else { %>
+					<th>내용</th><td><textarea name="content" id="" readonly><%=bDTO.getContent() %></textarea></td>
+					<%} %>
 				</tr>
 			</table>
 			<div style="height:50px;"></div>
 			<div class="form-group" style="">
 				<div style=""><!-- button 태그가 type="button"으로 설정되지 않고 form태그 안에 있으면 form태그의 action의 url을 타고 controller로 이동함. type="button"으로 설정되었을 경우 onclick을 탄다. -->
-					<button type="button" class="btn float-right" onclick="delUserInfo()">delete</button>	<!-- modal 삭제 여부 모달 -->
+					<button type="button" class="btn float-right" onclick="delBoardInfo('<%=bDTO.getBoardNo()%>')">delete</button>	<!-- modal 삭제 여부 모달 -->
 				</div>
 				<div style="">
 					<button type="button" id="valid" class="btn float-right" style="">correct</button>
@@ -82,46 +83,23 @@
 	//유효성 검사
 	$('#valid').click(function() {
 		//id="formToController"인 form에서 id="valid"인 버튼을 눌렀을 때  
-		var userName = $('input[name=userName]');		//input타입에 name="usrName"으로 입력된 값을 받음.
-		/* var userEmail = $('input[name=userEmail]');		//input타입에 name="userEmail"으로 입력된 값을 받음. */
-		/* var userTel = $('input[name=userTel]');			//input타입에 name="userTel"으로 입력된 값을 받음. */
-		var pwd = $('input[name=password]');			//input타입에 name="password"으로 입력된 값을 받음.
-		var confirmPwd = $('input[name=Confirm-password]');			//input타입에 name="password"으로 입력된 값을 받음.
-		if (userName.val() == "") {
-			alert("name");
-			userName.focus();
-			
+		var title = $('input[name=title]');		//input타입에 name="title"으로 입력된 값을 받음.
+		var content = $('input[name=content]');			//input타입에 name="content"으로 입력된 값을 받음.
+		
+		if (title.val() == "") {
+			alert("title");
+			title.focus();
 			return false;
 		}
-		/* if (userEmail.val() == "") {
-			alert("email");
-			userEmail.focus();
-			
-			return false;
-		}
-		if (userTel.val() == "") {
-			alert("tel");
-			userTel.focus();
-			return false;
-		} */
-		if (pwd.val() == "") {
-			alert("pwd");
-			pwd.focus();
-			return false;
-		}
-		if (confirmPwd.val() == "") {
-			alert("Confirm-password");
-			confirmPwd.focus();
+		if (content.val() == "") {
+			alert("content");
+			content.focus();
 			return false;
 		}
 		
-		if(pwd.val() != confirmPwd.val()) {
-			alert("invalid");
-			confirmPwd.focus();
-			return false;
-		}
+		$('#formToController').submit();
 		
-		$.ajax({
+		/* $.ajax({
 			url:"/mynameChk.do",
 			method:"post",
 			data:{
@@ -153,7 +131,7 @@
 				alert("failed Ajax....");
 			}
 			
-		})
+		}) */
 		
 	});
 	

@@ -30,7 +30,7 @@
 				<th>작성일</th>
 			</tr>
 			<%for (int i=0; i < bList.size(); i++) { %>
-			<tr>
+			<tr class="hoverBoy" style="cursor:pointer" onclick="location.href='/board/boardDetail.do?boardNo=<%=bList.get(i).getBoardNo()%>';">
 				<td><%=bList.get(i).getUserName() %></td>
 				<td><%=bList.get(i).getTitle() %></td>
 				<td><%=bList.get(i).getContent() %></td>
@@ -50,7 +50,7 @@
 	<%@include file="/WEB-INF/view/bootmypage.jsp" %>
 	
 	<!-- 부트스트랩 services -->
-	<%@include file="/WEB-INF/view/bootservices.jsp" %>
+	<%@include file="/WEB-INF/view/bootsearch.jsp" %>
 	
 	<!-- 부트스트랩 board -->
 	<%@include file="/WEB-INF/view/bootboard.jsp" %>

@@ -30,7 +30,7 @@
 	<%@include file="bootmypage.jsp" %>
 	
 	<!-- 부트스트랩 services -->
-	<%@include file="bootservices.jsp" %>
+	<%@include file="bootsearch.jsp" %>
 	
 	<!-- 부트스트랩 board -->
 	<%@include file="bootboard.jsp" %>

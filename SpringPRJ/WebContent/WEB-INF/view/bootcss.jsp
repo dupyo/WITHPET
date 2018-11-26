@@ -23,7 +23,8 @@
 }
 
 .hoverBoy:hover {
-	z-index:10000;
+	z-index:1000;
 	background-color : rgba(119, 196, 255, 0.5);
+	opacity: 0.9;
 }
 </style>

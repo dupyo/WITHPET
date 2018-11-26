@@ -2,13 +2,13 @@
     pageEncoding="UTF-8"%>
     
     
-	<!-- Services -->
-	<section id="services">
+	<!-- search -->
+	<section id="search">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase">Services</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolorsit amet consectetur.</h3>
+					<h2 class="section-heading text-uppercase">Search</h2>
+					<h3 class="section-subheading text-muted">반려동물을 위한 의료센터와 상점을 검색합니다.</h3>
 				</div>
 			</div>
 			<div class="row text-center">

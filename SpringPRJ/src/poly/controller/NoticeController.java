@@ -39,6 +39,7 @@ public class NoticeController {
 	 * method => 기입안하면 GET, POST 모두 가능하나, 가급적 적어주는 것이 좋다.
 	 * */
 	
+	//index(main) 창 이동
 	@RequestMapping(value="main")
 	public String main(HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session) throws Exception{
 		

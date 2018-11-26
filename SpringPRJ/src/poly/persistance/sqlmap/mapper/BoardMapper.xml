@@ -11,7 +11,8 @@
 				BOARD_TITLE,
 				BOARD_CONTENT,
 				BOARD_LEVEL,
-				REG_DATE
+				REG_DATE,
+				REG_NO
 				
 			)
 			VALUES
@@ -20,7 +21,8 @@
 				#{title},
 				#{content},
 				1,
-				NOW()
+				NOW(),
+				#{userNo}
 			)
 			
 	</insert>
@@ -36,6 +38,7 @@
 			B.BOARD_CONTENT as content,
 			B.BOARD_COUNT as count,
 			B.REG_DATE as regDate,
+			B.UPD_DATE as updDate,
 			B.BOARD_LEVEL as boardLevel
 		FROM WIP_BOARD B
 		INNER JOIN USER_INFO U
@@ -55,6 +58,7 @@
 			B.BOARD_CONTENT as content,
 			B.BOARD_COUNT as count,
 			B.REG_DATE as regDate,
+			B.UPD_DATE as updDate,
 			B.BOARD_LEVEL as boardLevel
 		FROM WIP_BOARD B
 		INNER JOIN USER_INFO U
@@ -62,6 +66,35 @@
 		WHERE B.BOARD_LEVEL = 2
 		
 	</select>
+	
+	<!-- 게시물 상세 불러오기 -->
+	<select id="getBoardDetail" parameterType="string" resultType="BoardDTO">
+		
+		SELECT 
+			B.BOARD_NO as boardNo,
+			B.USER_NO as userNo,
+			U.USER_NAME as userName,
+			B.BOARD_TITLE as title,
+			B.BOARD_CONTENT as content,
+			B.BOARD_COUNT as count,
+			B.REG_DATE as regDate,
+			B.UPD_DATE as updDate,
+			B.BOARD_LEVEL as boardLevel
+		FROM WIP_BOARD B
+		INNER JOIN USER_INFO U
+		ON B.USER_NO=U.USER_NO
+		WHERE B.BOARD_NO=#{boardNo}
+		
+	</select>
+	
+	<!-- 게시물 삭제 -->
+	<delete id="deleteBoardProc" parameterType="string">
+	
+        DELETE 
+        FROM WIP_BOARD
+		WHERE BOARD_NO=#{boardNo}
+	
+	</delete>
 	
 
 </mapper>

@@ -39,11 +39,14 @@
 			USER_TEL as userTel,
 			PASSWORD as password,
 			REG_DATE as regDate,
+			REG_NO as regNo,
+			UPD_DATE as updDate,
+			UPD_NO as updNo,
 			BIRTHGENDER as birthGender,
 			USER_AUTH as userAuth
 		FROM USER_INFO
 		WHERE (USER_EMAIL=#{userEmail} OR USER_NAME=#{userName}) AND PASSWORD=#{password}
-		
+		<!-- 정보가 틀리면 select문을 실핼하지 못하고 null값을 반환함. -->
 	</select>
 	
 	<!-- 회원정보수정 -->
@@ -54,15 +57,44 @@
 			USER_EMAIL=#{userEmail},
 			USER_TEL=#{userTel},
 			PASSWORD=#{password},
-			UPD_DATE=NOW()
-		WHERE USER_NO=#{userNo}	
+			UPD_DATE=NOW(),
+			UPD_NO=#{userNo}
+		WHERE USER_NO=#{userNo}
 	
 	</update>
-	<!--getEmailChk 이메일 조회  체크 AJAX-->
+	
+	<!-- 회원정보수정 getMyNameChk 닉네임 조회 체크 AJAX -->
+	<select id="getMyNameChk" parameterType="UserDTO" resultType="int">
+	
+	SELECT COUNT(USER_NAME)
+	FROM USER_INFO
+	WHERE USER_NAME=#{userName} AND USER_NO!=#{userNo}
+	<!-- userNo가 다르면서 수정하려는 userName이 동일한 회원이 존재하면 수정불가 -->
+	</select>
+
+	<!-- 회원가입 getNameChk 닉네임 조회 체크 AJAX -->
+	<select id="getNameChk" parameterType="UserDTO" resultType="int">
+	
+	SELECT COUNT(USER_NAME)
+	FROM USER_INFO
+	WHERE USER_NAME=#{userName}
+	<!-- count()의 값이 1이면 닉네임 중복, 0이면 사용가능 -->
+	</select>
+
+	<!-- 회원가입 getEmailChk 닉네임 조회 체크 AJAX -->
 	<select id="getEmailChk" parameterType="UserDTO" resultType="int">
 	
-	SELECT COUNT(USER_EMAIL) FROM USER_INFO WHERE USER_EMAIL=#{userEmail}
-	
+	SELECT COUNT(USER_EMAIL)
+	FROM USER_INFO
+	WHERE USER_EMAIL=#{userEmail}
+	<!-- count()의 값이 1이면 이메일 중복, 0이면 사용가능 -->
 	</select>
+	
+	<!-- 회원정보삭제 -->
+	<delete id="deleteUserProc" parameterType="string">
+		DELETE
+		FROM USER_INFO
+		WHERE USER_NO=#{userNo}
+	</delete>
 	
 </mapper>

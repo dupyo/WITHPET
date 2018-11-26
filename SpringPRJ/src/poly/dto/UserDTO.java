@@ -10,8 +10,12 @@ public class UserDTO {
 	private String userAuth;
 	private String userStat;
 	private String regDate;
+	private String regNo;
+	private String updDate;
+	private String updNo;
 	private String birthGender;
 	private String userNameOrEmail;
+	private String myFvrCenterNo;
 	
 	public String getUserNo() {
 		return userNo;
@@ -73,6 +77,30 @@ public class UserDTO {
 	}
 	public void setUserNameOrEmail(String userNameOrEmail) {
 		this.userNameOrEmail = userNameOrEmail;
+	}
+	public String getRegNo() {
+		return regNo;
+	}
+	public void setRegNo(String regNo) {
+		this.regNo = regNo;
+	}
+	public String getUpdDate() {
+		return updDate;
+	}
+	public void setUpdDate(String updDate) {
+		this.updDate = updDate;
+	}
+	public String getUpdNo() {
+		return updNo;
+	}
+	public void setUpdNo(String updNo) {
+		this.updNo = updNo;
+	}
+	public String getMyFvrCenterNo() {
+		return myFvrCenterNo;
+	}
+	public void setMyFvrCenterNo(String myFvrCenterNo) {
+		this.myFvrCenterNo = myFvrCenterNo;
 	}
 	
 }

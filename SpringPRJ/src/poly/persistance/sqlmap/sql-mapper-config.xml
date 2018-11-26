@@ -4,8 +4,12 @@
 <configuration>
     <typeAliases>
     	<!-- 사용할 DTO 등록  -->
+    	<!-- 여기서 선언한 경로대로 DTO가 생성되어 있지 않으면 'org.springframework.beans.factory.BeanCreationException:' 오류 발생 -->
 		<typeAlias type="poly.dto.NoticeDTO" alias="NoticeDTO"/>
 		<typeAlias type="poly.dto.UserDTO" alias="UserDTO"/>
 		<typeAlias type="poly.dto.BoardDTO" alias="BoardDTO"/>
+		<typeAlias type="poly.dto.ReviewDTO" alias="ReviewDTO"/>
+		<typeAlias type="poly.dto.CenterDTO" alias="CenterDTO"/>
+		<typeAlias type="poly.dto.NewsDTO" alias="NewsDTO"/>
     </typeAliases>
 </configuration>

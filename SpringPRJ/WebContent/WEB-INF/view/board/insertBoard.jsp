@@ -41,7 +41,7 @@
 	<%@include file="/WEB-INF/view/bootmypage.jsp" %>
 	
 	<!-- 부트스트랩 services -->
-	<%@include file="/WEB-INF/view/bootservices.jsp" %>
+	<%@include file="/WEB-INF/view/bootsearch.jsp" %>
 	
 	<!-- 부트스트랩 board -->
 	<%@include file="/WEB-INF/view/bootboard.jsp" %>

@@ -1,24 +1,22 @@
 package poly.dto;
 
-public class BoardDTO {
+public class NewsDTO {
 	
-	private String boardNo;
+	private String newsNo;
 	private String userNo;
 	private String userName;
 	private String title;
 	private String content;
-	private String count;
 	private String regDate;
 	private String regNo;
 	private String updDate;
 	private String updNo;
-	private String boardLevel;
 	
-	public String getBoardNo() {
-		return boardNo;
+	public String getNewsNo() {
+		return newsNo;
 	}
-	public void setBoardNo(String boardNo) {
-		this.boardNo = boardNo;
+	public void setNewsNo(String newsNo) {
+		this.newsNo = newsNo;
 	}
 	public String getUserNo() {
 		return userNo;
@@ -38,35 +36,11 @@ public class BoardDTO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getCount() {
-		return count;
-	}
-	public void setCount(String count) {
-		this.count = count;
-	}
 	public String getRegDate() {
 		return regDate;
 	}
 	public void setRegDate(String regDate) {
 		this.regDate = regDate;
-	}
-	public String getUpdDate() {
-		return updDate;
-	}
-	public void setUpdDate(String updDate) {
-		this.updDate = updDate;
-	}
-	public String getBoardLevel() {
-		return boardLevel;
-	}
-	public void setBoardLevel(String boardLevel) {
-		this.boardLevel = boardLevel;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 	public String getRegNo() {
 		return regNo;
@@ -74,11 +48,23 @@ public class BoardDTO {
 	public void setRegNo(String regNo) {
 		this.regNo = regNo;
 	}
+	public String getUpdDate() {
+		return updDate;
+	}
+	public void setUpdDate(String updDate) {
+		this.updDate = updDate;
+	}
 	public String getUpdNo() {
 		return updNo;
 	}
 	public void setUpdNo(String updNo) {
 		this.updNo = updNo;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 }
